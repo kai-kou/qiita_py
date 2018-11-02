@@ -88,6 +88,11 @@ class QiitaClient(QiitaClientBase):
         '''
         return self.get("/users/{}/items".format(user_id), params, headers)
 
+    def get_authenticated_user_items(self, params=None, headers=None):
+        ''' アクセストークンに紐付いたユーザの投稿一覧を返します。
+        '''
+        return self.get("/authenticated_user/items", params, headers)
+
     def list_user_stocks(self, user_id, params=None, headers=None):
         ''' 特定のユーザがストックした投稿一覧を返します。
         '''
